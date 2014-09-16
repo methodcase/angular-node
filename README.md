@@ -1,0 +1,1 @@
+This is a starter template to get JavaScript up and running.
