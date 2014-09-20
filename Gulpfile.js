@@ -16,6 +16,8 @@ gulp.task('default',function () {
 	lr.listen(35729); // tiny-lr server	
 	console.log("tiny-lr server running at port 35729");
 
+	require("openurl").open("http://localhost:3100") // open the browser and load localhost:3100
+
 	gulp.watch('*',function(event){		
 		var fileName = require('path').relative(__dirname, event.path);
 		console.log(fileName);
@@ -27,4 +29,3 @@ gulp.task('default',function () {
 	});
 	
 });
-
