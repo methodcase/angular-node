@@ -1,24 +1,16 @@
 var gulp = require('gulp');
+var app = require('./app.js')
 
 gulp.task('default',function () {
+	app(); // call app.js
 
-	var express  =  require('express');
-	var app = express();
 	var lr = require('tiny-lr')();
-	var browserify = require('browserify');
-
-	app.use(require('connect-livereload')());
-	app.use(express.static(__dirname));
-
-	app.listen(3100); // express server
-	console.log("Server running at http://localhost:3100/");
-
 	lr.listen(35729); // tiny-lr server	
 	console.log("tiny-lr server running at port 35729");
 
 	require("openurl").open("http://localhost:3100") // open the browser and load localhost:3100
 
-	gulp.watch('*',function(event){		
+	gulp.watch('www/*.*',function(event){		
 		var fileName = require('path').relative(__dirname, event.path);
 		console.log(fileName);
 		 lr.changed({

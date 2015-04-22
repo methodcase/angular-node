@@ -19,13 +19,12 @@
     "url": "https://github.com/tuxrace/js-starter/issues"
   },
   "homepage": "https://github.com/tuxrace/js-starter",
-  "devDependencies": {
-    "browserify": "^5.11.2",
+  "devDependencies": {    
     "connect-livereload": "^0.4.0",
     "express": "^4.9.0",
-    "gulp": "^3.8.8",
-    "moment": "^2.8.3",
+    "gulp": "^3.8.8",    
     "openurl": "^1.1.0",
-    "tiny-lr": "^0.1.4"
+    "tiny-lr": "^0.1.4",
+    "ejs": "2.3.1"
   }
 }
