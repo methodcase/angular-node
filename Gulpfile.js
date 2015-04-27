@@ -10,7 +10,7 @@ gulp.task('default',function () {
 
 	require("openurl").open("http://localhost:3100") // open the browser and load localhost:3100
 
-	gulp.watch('www/*.*',function(event){		
+	gulp.watch('www/*/*.*',function(event){		
 		var fileName = require('path').relative(__dirname, event.path);
 		console.log(fileName);
 		 lr.changed({
