@@ -1,4 +1,4 @@
-#Angular-Node
+#Angular-Node Basic
 
 Very basic app structure using angular on front end and node at the back end
 
