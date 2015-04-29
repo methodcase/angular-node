@@ -1,15 +1,18 @@
-# js-starter
-This is a starter template to get JavaScript up and running.
+#Angular-Node
 
-Assuming you have node.js already installed 
+Very basic app structure using angular on front end and node at the back end
 
-1. `npm install`
+Frontend
+Angular
+Angular-ui-router (routing)
 
-2. `gulp` 
+Backend
+NodeJS
+ExpressJS
 
-Included
-AngularJS
-Angular ui-router
-Bootstrap
+The website gets an list of article from an api
+using Angular http get `/rest/article`, then NodeJS handles the back end point serving /rest/article which gets the API from external source.
 
-This will automatically load http://localhost:3100 to your default browser.
+To run:
+    1. npm install
+    2. gulp
