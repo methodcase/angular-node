@@ -1,4 +1,4 @@
- module.exports = function() {
+ // module.exports = function() {
 	var express  =  require('express');
 	var app = express();	
 	var multer  = require('multer');
@@ -15,4 +15,4 @@
 	
 	app.listen(3100); // express server
 	console.log("Server running at http://localhost:3100/");	
- }
+ // }
