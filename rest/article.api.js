@@ -1,6 +1,8 @@
 var getArticle = function(response){
 	
-	var http = require('http')
+	var http = require('http');
+	var weather  = require('weather-js');
+
 	var options = {
 	'hostname': 'api.reddit.com',
 	'port': 80,
@@ -13,22 +15,33 @@ var getArticle = function(response){
 		var list = [];
 	    d.data.children.map(function(a){
 	        list.push({title:a.data.title});
-	    });
-	    response.send(list);
+	    });	    	       
+	    return list;
 	}
+		
+	var httpGetApi = function(options, caller){
+		http.get(options, function(res){
+			var body = '';
+			res.on('data', function(chunk){
+				body += chunk
+			})
 
-	http.get(options, function(res){
-	    console.log(res.statusCode)
-	    var body = '';
-	    res.on('data', function(chunk){
-	        body += chunk
-	    });
-	    res.on('end', function(){
-	        var info = JSON.parse(body);
-	        callBack(info)
-	    });
-	}, callBack);
+			res.on('end', function(){
+				var info = JSON.parse(body)
+				caller(info)
+			})
+		})
+	};
 
+	//httpGetApi(options, callBack);
+
+	weather.find({search: 'Cebu', degreeType: 'F'}, function(err, result) {
+	  if(err) console.log(err);
+	 
+	  //console.log(JSON.stringify(result, null, 2));
+	  JSON.stringify(result, null, 2)
+	});
+	
 }
 
 exports.show = function(response){

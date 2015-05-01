@@ -9,5 +9,4 @@ angular.module('app.controllers',[])
 	  error(function(data, status, headers, config) {
 	  });
 
-})
-
+});

@@ -5,8 +5,9 @@ module.exports = function(app){
 	});
 
 	app.get("/rest/article", function(req, res){
-		var article = require('./article.api.js')
-		console.log(article.show(res))
+		var article = require('./article.api.js')				
+		article.show(res);		
+		
 	});
 	
 }
