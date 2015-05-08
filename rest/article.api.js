@@ -1,7 +1,6 @@
 var getArticle = function(response){
 	
 	var http = require('http');
-	var weather  = require('weather-js');
 
 	var options = {
 	'hostname': 'api.reddit.com',
@@ -16,7 +15,7 @@ var getArticle = function(response){
 	    d.data.children.map(function(a){
 	        list.push({title:a.data.title});
 	    });	    	       
-	    return list;
+	    response.send(list);
 	}
 		
 	var httpGetApi = function(options, caller){
@@ -33,15 +32,8 @@ var getArticle = function(response){
 		})
 	};
 
-	//httpGetApi(options, callBack);
+	httpGetApi(options, callBack);
 
-	weather.find({search: 'Cebu', degreeType: 'F'}, function(err, result) {
-	  if(err) console.log(err);
-	 
-	  //console.log(JSON.stringify(result, null, 2));
-	  JSON.stringify(result, null, 2)
-	});
-	
 }
 
 exports.show = function(response){

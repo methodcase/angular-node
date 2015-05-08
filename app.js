@@ -1,11 +1,8 @@
 	var express  =  require('express');
 	var app = express();	
-	var multer  = require('multer');
 	var router = require('./rest/router.js');
 
-	app.use(require('connect-livereload')());
 	app.use(express.static(__dirname));
-	app.use(multer({ dest: './uploads/'}))
 	
 	app.engine('html', require('ejs').renderFile);
 	app.set('views', __dirname + '/views'); //optional since express defaults to CWD/views
