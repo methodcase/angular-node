@@ -1,3 +1,4 @@
+module.exports = function () {
 	var express  =  require('express');
 	var app = express();	
 	var router = require('./rest/router.js');
@@ -11,3 +12,4 @@
 	
 	app.listen(3100); // express server
 	console.log("Server running at http://localhost:3100/");	
+};
